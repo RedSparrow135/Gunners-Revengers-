@@ -31,7 +31,7 @@ int main(int argc, char** argv) {
     glutCreateWindow("Rectángulo Centrado");
 
     // Pantalla completa
-    glutFullScreen();
+   // glutFullScreen();
 
     juego.iniciar();
 

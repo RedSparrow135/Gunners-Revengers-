@@ -20,8 +20,7 @@ class Renderer {
 public:
     static void init();  // Inicializa la configuración de OpenGL
     static void dibujarRectangulo(const Rectangulo& rect); // Dibuja un rectángulo
-       // Nueva función para dibujar una plataforma con color
-    static void dibujarPlataforma(const Plataforma_r& rect);
+  static void dibujarPlataforma(const Plataforma_r& plat);  // Dibuja plataformas
     
 };
 

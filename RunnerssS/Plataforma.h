@@ -1,36 +1,34 @@
 #ifndef PLATAFORMA_H
 #define PLATAFORMA_H
 
-#include "Renderer.h"  // Para usar la funcion de renderizado
-#include <vector>  // Para usar std::vector
+#include "Renderer.h"
+#include <vector>
+
+
+
 // Estructura para representar una plataforma
-
-
-
 struct Plataforma {
-    float x, y;         // Posicion de la plataforma
+    float x, y;         // Posici髇 de la plataforma
     float ancho, alto;  // Dimensiones de la plataforma
-    float r,g,b;
+    float r, g, b;      // Color de la plataforma
 };
-struct Jugador_Ref{
-	float x, y;         // Posicion de la plataforma
-    float ancho, alto; 
+struct Choque{
+	bool arriba;
+    bool abajo;
+    bool izquierda;
+    bool derecha;
 };
 
-// Clase encargada de manejar plataformas
+// Clase para manejar las plataformas
 class PlataformaHandler {
 public:
-    // Lista de plataformas
-    static std::vector<Plataforma> plataformas;
-
-    // Funci贸n para agregar una plataforma
     static void agregarPlataforma(float x, float y, float ancho, float alto, float r, float g, float b);
-
-    // Funci贸n para renderizar todas las plataformas
     static void renderizarPlataformas();
+    static bool chequearColisionJugadorConPlataforma(const Rectangulo& jugador,Plataforma& plataformaColisionada,Choque& choque );
 
-    // Funci贸n para manejar la colisi贸n del jugador con las plataformas
-    static bool chequearColisionJugadorConPlataforma(const Jugador_Ref& jugador);
+private:
+    static std::vector<Plataforma> plataformas;  // Lista de plataformas
 };
 
-#endif	
+#endif
+
